@@ -6,6 +6,7 @@ This data was gotten from kaggle
 [Download here] (https://www.kaggle.com/datasets/lucalullo/global-homicide-rates-by-country)
 # Converted rate to % in Excel
 I changed the homicide rate in the original data set to % and reduced the decimal place for easy analysis
+
 ![1](https://github.com/user-attachments/assets/20abc6e7-8433-4071-90ec-89298348445d)
 # SQL Queries
 # 1. what country has the highest homicide rate
@@ -22,3 +23,15 @@ I changed the homicide rate in the original data set to % and reduced the decima
 ![7](https://github.com/user-attachments/assets/f738c321-07a5-4cd5-a49e-01187676d35d)
 # 7. In what year was the homicide rate the lowest
 ![8](https://github.com/user-attachments/assets/337ad661-d066-40c4-8e9a-e1185dfa7f3b)
+# 8. what gender committted the highest homicide
+![9](https://github.com/user-attachments/assets/df1ffcd0-60fb-4c62-a02b-8cdafb6bbb16)
+# 9. In what year did a female commit the highest homicide
+![10](https://github.com/user-attachments/assets/edfe128f-0e33-41a4-8db4-040886480514)
+# 10. Homicide rate that happened per year
+![11](https://github.com/user-attachments/assets/439c736b-8a40-4f90-b706-43302032da8b)
+# 11. Homicide rate that happened per country
+![12](https://github.com/user-attachments/assets/2be1e5e3-db12-4f34-8e55-5840fc2cb28f)
+# 12. Homicide rate that happened per age group
+![13](https://github.com/user-attachments/assets/1e77399e-cb03-4ea7-969c-b25011dca7ff)
+
+
