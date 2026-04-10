@@ -33,5 +33,8 @@ I changed the homicide rate in the original data set to % and reduced the decima
 ![12](https://github.com/user-attachments/assets/2be1e5e3-db12-4f34-8e55-5840fc2cb28f)
 # 12. Homicide rate that happened per age group
 ![13](https://github.com/user-attachments/assets/1e77399e-cb03-4ea7-969c-b25011dca7ff)
-
+# Copied table gotten from question 10, 11 & 12 into excel and designed it
+![14](https://github.com/user-attachments/assets/5998c4ab-0e50-46c9-a2ea-39fc94edaa1f)
+# Created a pivot table for each
+![15](https://github.com/user-attachments/assets/97b4bfb9-eaa8-435f-93a7-2473e43a75f6)
 
