@@ -4,43 +4,99 @@ Analysis of homicide rate based on country, year, age group and gender using SQL
 ## Data Source
 This data was gotten from kaggle
 [Download here] (https://www.kaggle.com/datasets/lucalullo/global-homicide-rates-by-country)
-## Converted rate to % in Excel
-I changed the homicide rate in the original data set to % and reduced the decimal place for easy analysis
 
-![1](https://github.com/user-attachments/assets/20abc6e7-8433-4071-90ec-89298348445d)
 ## SQL Queries
-### 1. what country has the highest homicide rate
-![2](https://github.com/user-attachments/assets/51345ecf-b7dd-4c46-aed7-ef218c59ac36)
-### 2. Top 5 countries with high homicide rate
-![3](https://github.com/user-attachments/assets/27fb85f1-2c25-44b1-b76c-b7d57df280dc)
-### 3. what country has the lowest homicide rate
-![4](https://github.com/user-attachments/assets/68630b6d-5a2c-4cf7-9beb-12b8ab647c7d)
-### 4. Top 5 countries with the low homicide rate
-![5](https://github.com/user-attachments/assets/8abc83b7-4cac-4a09-bf6d-b1dc8b776577)
-### 5. what age group has the lowest homicide rate
-![6](https://github.com/user-attachments/assets/25cdc44a-b7ba-46d1-994f-f9f246d8fd26)
-### 6. In what year was the homicide rate the highest 
-![7](https://github.com/user-attachments/assets/f738c321-07a5-4cd5-a49e-01187676d35d)
-### 7. In what year was the homicide rate the lowest
-![8](https://github.com/user-attachments/assets/337ad661-d066-40c4-8e9a-e1185dfa7f3b)
-### 8. what gender committted the highest homicide
-![9](https://github.com/user-attachments/assets/df1ffcd0-60fb-4c62-a02b-8cdafb6bbb16)
-### 9. In what year did a female commit the highest homicide
-![10](https://github.com/user-attachments/assets/edfe128f-0e33-41a4-8db4-040886480514)
-### 10. Homicide rate that happened per year
-![11](https://github.com/user-attachments/assets/439c736b-8a40-4f90-b706-43302032da8b)
-### 11. Homicide rate that happened per country
-![12](https://github.com/user-attachments/assets/2be1e5e3-db12-4f34-8e55-5840fc2cb28f)
-### 12. Homicide rate that happened per age group
-![13](https://github.com/user-attachments/assets/1e77399e-cb03-4ea7-969c-b25011dca7ff)
+
+### 1. What country had the highest average homicide rate?
+
+```SQL
+SELECT country, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'both'
+AND age_group = 'ALL'
+GROUP BY country
+ORDER BY AVG(homicide_rate) DESC
+LIMIT 1;
+```
+<img width="260" height="57" alt="1" src="https://github.com/user-attachments/assets/1afe3236-3edb-4bda-b5d1-9f87b4870253" />
+
+
+### 2. Top 5 countries that had the highest average homicide rate?
+
+```SQL
+SELECT country, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'both'
+AND age_group = 'ALL'
+GROUP BY country
+ORDER BY AVG(homicide_rate) DESC
+LIMIT 5;
+```
+<img width="271" height="162" alt="2" src="https://github.com/user-attachments/assets/6bf530b2-392e-4147-9520-0513750a2313" />
+
+### 3. What country had the lowest average homicide rate?
+
+```SQL
+SELECT country, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'both'
+AND age_group = 'ALL'
+GROUP BY country
+ORDER BY AVG(homicide_rate)
+LIMIT 1;
+```
+<img width="248" height="61" alt="3" src="https://github.com/user-attachments/assets/91b7574c-002f-4662-aa62-6d86f4b9ffe0" />
+
+### 4. What year had the highest global average homicide rate?
+
+```SQL
+SELECT year, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'both'
+AND age_group = 'ALL'
+GROUP BY year
+ORDER BY AVG(homicide_rate) DESC
+LIMIT 1;
+```
+<img width="214" height="60" alt="4" src="https://github.com/user-attachments/assets/a0084cfc-e2ff-4ab7-a445-d7e68f3d0097" />
+
+### 5. What year had the lowest global average homicide rate?
+
+```SQL
+SELECT year, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'both'
+AND age_group = 'ALL'
+GROUP BY year
+ORDER BY AVG(homicide_rate)
+LIMIT 1;
+```
+<img width="213" height="58" alt="5" src="https://github.com/user-attachments/assets/7ccaa16a-bab2-4df3-b298-8c58f87afb15" />
+
+### 6. What gender committed the highest average homicide?
+
+```SQL
+SELECT sex, AVG(homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE age_group = 'ALL'
+AND sex != 'both'
+GROUP BY sex
+ORDER BY "Average Homicide Rate" DESC
+LIMIT 1;
+```
+<img width="210" height="59" alt="6" src="https://github.com/user-attachments/assets/6caebfd6-8ee4-497f-95bd-5e902743d128" />
+
+### 7. In what year did a female commit the highest average homicide?
+
+```SQL
+SELECT year, AVG (homicide_rate) AS "Average Homicide Rate"
+FROM Homicide
+WHERE sex = 'female'
+AND age_group = 'ALL'
+GROUP BY year
+ORDER BY AVG(homicide_rate) DESC
+LIMIT 1;
+```
+<img width="207" height="58" alt="7" src="https://github.com/user-attachments/assets/225200f5-15ae-4315-b197-cb3d40c81eda" />
 
 ## DASHBOARD VISUALIZATION IN EXCEL
-### Step 1: Copied table gotten from question 10, 11 & 12 into excel and designed it
-![14](https://github.com/user-attachments/assets/5998c4ab-0e50-46c9-a2ea-39fc94edaa1f)
-### Step 2: Created a pivot table for each
-![15](https://github.com/user-attachments/assets/97b4bfb9-eaa8-435f-93a7-2473e43a75f6)
-### Step 3: Created Slicers for each
-![16](https://github.com/user-attachments/assets/848bf7e6-b801-4e06-963c-8553eea643b0)
-
-## DASHBOARD
-![17](https://github.com/user-attachments/assets/8ec250ad-656b-40b8-a915-3855b9e604a7)
